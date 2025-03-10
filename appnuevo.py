@@ -19,7 +19,7 @@ bill_length_avg = df.groupby("species")["bill_length_mm"].mean().to_dict()
 
 # Streamlit UI
 st.title("Which Species Has the Longest Bill?")
-st.header("This app tests which visualization best answers the question above.")
+st.header("This app tests which graphic best answers the question above.")
 
 # Create the state environment for the charts
 if 'chart' not in st.session_state:
@@ -64,24 +64,17 @@ if st.session_state.chart:
     else:
         plot_chart_b()
 
-    # Allow user to select an answer
-    species_options = list(bill_length_avg.keys())  # Get species names
-    user_answer = st.radio("Which species has the longest average bill length?", species_options)
-
+ 
     # Record the time taken to answer the question
-    if st.button("Submit"):
+    if st.button("I Submitted my Answer"):
         elapsed_time = time.time() - st.session_state.start_time
         st.session_state.answered = True
 
         # Find the correct answer (species with the longest bill)
         correct_species = max(bill_length_avg, key=bill_length_avg.get)
-
-        if user_answer == correct_species:
-            st.success(f"Correct! The {correct_species} penguin has the longest bill. You answered in {elapsed_time:.2f} seconds.")
-        else:
-            st.error(f"Incorrect. The correct answer is: {correct_species}. You answered in {elapsed_time:.2f} seconds.")
+        st.success("Congrats, you have answered the question in {elapsed_time:.2f}")
 
 # Streamlit deployment and GitHub repo links (replace with your own)
-st.markdown("### [GitHub Repository](https://github.com/nachobaratech/Individual_Assignment1_Nacho.git)")
-st.markdown("### [Live Streamlit App](https://individual-assignment1.streamlit.app/)")
+st.markdown("[GitHub Repository](https://github.com/nachobaratech/Individual_Assignment1_Nacho.git)")
+st.markdown("[Live Streamlit App](https://individual-assignment1.streamlit.app/)")
                                                                        
