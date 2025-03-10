@@ -6,4 +6,4 @@ gspread==5.12.4
 google-auth==2.38.0
 google-auth-oauthlib==1.2.1
 google-auth-httplib2==0.2.0
-streamlit-gsheets-connection==0.1.0
+st-gsheets-connection==0.1.0
