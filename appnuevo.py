@@ -100,7 +100,5 @@ if st.session_state.chart:
 
 # Streamlit deployment and GitHub repo links (replace with your own)
 st.markdown("### [GitHub Repository](https://github.com/nachobaratech/Individual_Assignment1_Nacho.git)")
-st.markdown("### [Live Streamlit App](https://your-streamlit-app-url)")
-
-print("hello world")
+st.markdown("### [Live Streamlit App](https://individual-assignment1.streamlit.app/)")
                                                                        
