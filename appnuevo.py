@@ -75,6 +75,6 @@ if st.session_state.chart:
         st.success(f"Congrats, you have answered the question in {elapsed_time:.2f} seconds")
 
 # This is the streamlit deployment and GitHub repo links
-st.markdown("[GitHub Repository](https://github.com/nachobaratech/Individual_Assignment1_Nacho.git)")
-st.markdown("[Live Streamlit App](https://individual-assignment1.streamlit.app/)")
+st.markdown("GitHub Repository: https://github.com/nachobaratech/Individual_Assignment1_Nacho.git")
+st.markdown("Live Streamlit App: https://individual-assignment1.streamlit.app/")
                                                                        
