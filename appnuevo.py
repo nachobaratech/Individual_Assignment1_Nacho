@@ -50,6 +50,17 @@ def plot_chart_b():
     ax.set_ylabel("Bill Length (mm)")
     st.pyplot(fig)
 
+def plot_chart_c():
+    fig, ax = plt.subplots(figsize=(10, 5))
+    species_list = list(bill_length_avg.keys())
+    avg_lengths = list(bill_length_avg.values())
+
+    sns.barplot(x=species_list, y=avg_lengths, ax=ax, palette="viridis")
+    ax.set_title("Average Bill Length per Species")
+    ax.set_xlabel("Species")
+    ax.set_ylabel("Average Bill Length (mm)")
+    st.pyplot(fig)
+
 # This creates a button to randomly show a chart after being clicked
 if st.button("Show a Chart"):
     st.session_state.chart = random.choice(["A", "B"])
