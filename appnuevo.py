@@ -41,18 +41,6 @@ def plot_chart_a():
     ax.set_ylabel("Count")
     st.pyplot(fig)
 
-def plot_chart_d():
-    fig, ax = plt.subplots(figsize=(10, 5))
-    species_list = list(bill_length_avg.keys())
-    avg_lengths = list(bill_length_avg.values())
-
-    ax.plot(species_list, avg_lengths, marker="o", linestyle="-", color="blue", linewidth=2, markersize=8)
-    ax.set_title("Trend of Average Bill Length Across Species")
-    ax.set_xlabel("Species")
-    ax.set_ylabel("Average Bill Length (mm)")
-    ax.grid(True)
-    st.pyplot(fig)
-
 # This is the code for visualization 2: A Boxplot
 def plot_chart_b():
     fig, ax = plt.subplots(figsize=(10, 5))
@@ -61,18 +49,6 @@ def plot_chart_b():
     ax.set_xlabel("Species")
     ax.set_ylabel("Bill Length (mm)")
     st.pyplot(fig)
-
-def plot_chart_c():
-    fig, ax = plt.subplots(figsize=(10, 5))
-    species_list = list(bill_length_avg.keys())
-    avg_lengths = list(bill_length_avg.values())
-
-    sns.barplot(x=species_list, y=avg_lengths, ax=ax, palette="viridis")
-    ax.set_title("Average Bill Length per Species")
-    ax.set_xlabel("Species")
-    ax.set_ylabel("Average Bill Length (mm)")
-    st.pyplot(fig)
-
 
 # This creates a button to randomly show a chart after being clicked
 if st.button("Show a Chart"):
@@ -84,12 +60,8 @@ if st.button("Show a Chart"):
 if st.session_state.chart:
     if st.session_state.chart == "A":
         plot_chart_a()
-    elif st.session_state.chart == "B":
-        plot_chart_b()
-    elif st.session_state.chart == "C":
-        plot_chart_c()
     else: 
-        plot_chart_d()
+        plot_chart_b()
 
 
  
