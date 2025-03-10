@@ -1,0 +1,8 @@
+streamlit==1.43.0
+matplotlib==3.10.1
+pandas==2.2.3
+seaborn==0.13.2
+gspread==5.12.4
+google-auth==2.38.0
+google-auth-oauthlib==1.2.1
+google-auth-httplib2==0.2.0
