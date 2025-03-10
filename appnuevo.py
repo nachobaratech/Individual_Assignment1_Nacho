@@ -1,3 +1,6 @@
+#NAME : IGNACIO BARATECH BALLESTER
+#DATE : MARCH 10TH 2025
+
 import streamlit as st
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -63,8 +66,6 @@ if st.session_state.chart:
     else: 
         plot_chart_b()
 
-
- 
     # This records the time taken to answer the question by the user 
     if st.button("I Submitted my Answer"):
         elapsed_time = time.time() - st.session_state.start_time
