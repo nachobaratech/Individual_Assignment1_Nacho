@@ -71,7 +71,7 @@ if st.session_state.chart:
 
         # Find the correct answer (species with the longest bill)
         correct_species = max(bill_length_avg, key=bill_length_avg.get)
-        st.success(f"Congrats, you have answered the question in {elapsed_time:.2f}")
+        st.success(f"Congrats, you have answered the question in {elapsed_time:.2f} seconds")
 
 # Streamlit deployment and GitHub repo links (replace with your own)
 st.markdown("[GitHub Repository](https://github.com/nachobaratech/Individual_Assignment1_Nacho.git)")
