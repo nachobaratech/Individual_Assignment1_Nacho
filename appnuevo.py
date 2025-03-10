@@ -41,6 +41,18 @@ def plot_chart_a():
     ax.set_ylabel("Count")
     st.pyplot(fig)
 
+def plot_chart_d():
+    fig, ax = plt.subplots(figsize=(10, 5))
+    species_list = list(bill_length_avg.keys())
+    avg_lengths = list(bill_length_avg.values())
+
+    ax.plot(species_list, avg_lengths, marker="o", linestyle="-", color="blue", linewidth=2, markersize=8)
+    ax.set_title("Trend of Average Bill Length Across Species")
+    ax.set_xlabel("Species")
+    ax.set_ylabel("Average Bill Length (mm)")
+    ax.grid(True)
+    st.pyplot(fig)
+
 # This is the code for visualization 2: A Boxplot
 def plot_chart_b():
     fig, ax = plt.subplots(figsize=(10, 5))
@@ -61,6 +73,7 @@ def plot_chart_c():
     ax.set_ylabel("Average Bill Length (mm)")
     st.pyplot(fig)
 
+
 # This creates a button to randomly show a chart after being clicked
 if st.button("Show a Chart"):
     st.session_state.chart = random.choice(["A", "B"])
@@ -71,8 +84,13 @@ if st.button("Show a Chart"):
 if st.session_state.chart:
     if st.session_state.chart == "A":
         plot_chart_a()
-    else:
+    elif st.session_state.chart == "B":
         plot_chart_b()
+    elif st.session_state.chart == "C":
+        plot_chart_c()
+    else: 
+        plot_chart_d()
+
 
  
     # This records the time taken to answer the question by the user 
