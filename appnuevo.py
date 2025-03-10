@@ -19,7 +19,6 @@ bill_length_avg = df.groupby("species")["bill_length_mm"].mean().to_dict()
 
 # Streamlit UI
 st.title("Which Species Has the Longest Bill?")
-st.header("This app tests which graphic best answers the question above.")
 
 # Create the state environment for the charts
 if 'chart' not in st.session_state:
@@ -72,7 +71,7 @@ if st.session_state.chart:
 
         # Find the correct answer (species with the longest bill)
         correct_species = max(bill_length_avg, key=bill_length_avg.get)
-        st.success("Congrats, you have answered the question in {elapsed_time:.2f}")
+        st.success(f"Congrats, you have answered the question in {elapsed_time:.2f}")
 
 # Streamlit deployment and GitHub repo links (replace with your own)
 st.markdown("[GitHub Repository](https://github.com/nachobaratech/Individual_Assignment1_Nacho.git)")
