@@ -4,28 +4,11 @@ import pandas as pd
 import time
 import random
 import seaborn as sns
-import gspread
 from google.oauth2.service_account import Credentials
 from streamlit_gsheets import GSheetsConnection
 
 conn = st.connection("gsheets", type=GSheetsConnection)
-data = conn.read()
-
-# Authenticate Google Sheets
-SERVICE_ACCOUNT_FILE = "JSON_individual-task-453011-2bfd3a329abb.json"
-SHEET_ID = "1g3DVcrxEt2jT3oPBAFGJ8G1o4DjgZghChD21ez0ZriM"
-SHEET_NAME = "Sheet1"
-
-credentials = Credentials.from_service_account_file(
-    SERVICE_ACCOUNT_FILE,
-    scopes=["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-)
-client = gspread.authorize(credentials)
-sheet = client.open_by_key(SHEET_ID).worksheet(SHEET_NAME)
-
-# Fetch data
-data = sheet.get_all_records()
-df = pd.DataFrame(data)
+df = conn.read()
 
 # Ensure numerical columns are converted properly
 df["bill_length_mm"] = pd.to_numeric(df["bill_length_mm"], errors="coerce")
